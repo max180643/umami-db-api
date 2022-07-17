@@ -1,0 +1,13 @@
+{
+    "SERVER": {
+        "DEBUG": "",
+        "PORT": ""
+    },
+    "DB": {
+        "ADDRESS": "",
+        "PORT": "",
+        "USER": "",
+        "PASSWORD": "",
+        "DBNAME": ""
+    }
+}
