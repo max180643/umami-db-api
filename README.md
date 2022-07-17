@@ -4,7 +4,7 @@ API for Umami Database (Only supported for PostgreSQL)
 
 </details>
 
-### Create a shortened URL with custom alias
+### Insert new pageview with create session
 
 ##### API request
 
