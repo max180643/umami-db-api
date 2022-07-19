@@ -12,7 +12,7 @@ COPY --from=builder /app/main .
 COPY --from=builder /app/config.json .
 
 RUN apk update
-RUN apk add curl
+RUN apk add --no-cache curl
 
 HEALTHCHECK --interval=30s --timeout=15s --start-period=30s \
   CMD curl --silent --fail localhost:8080/health || exit 1

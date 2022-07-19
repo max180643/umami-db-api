@@ -9,6 +9,8 @@
     "start": "go run src/app.go",
     "build": "go build -o main src/app.go",
     "production": "./main",
-    "dev": "nodemon --exec go run src/app.go --signal SIGTERM"
+    "dev": "nodemon --exec go run src/app.go --signal SIGTERM",
+    "docker-up": "docker compose up -d",
+    "docker-down": "docker compose down"
   }
 }
