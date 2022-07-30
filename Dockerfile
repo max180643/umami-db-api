@@ -11,6 +11,7 @@ FROM alpine:3.16
 WORKDIR /app
 COPY --from=builder /app/main .
 COPY --from=builder /app/config.json .
+COPY --from=builder /app/IP2LOCATION-LITE-DB1.IPV6.BIN .
 
 RUN apk update
 RUN apk add --no-cache tzdata

@@ -8,7 +8,7 @@ import (
 )
 
 func GetCountry(ip string) string {
-	db, err := ip2location.OpenDB("./src/public/IP2LOCATION-LITE-DB1.IPV6.BIN")
+	db, err := ip2location.OpenDB("./IP2LOCATION-LITE-DB1.IPV6.BIN")
 
 	// fallback
 	defer func() string {
