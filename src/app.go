@@ -22,6 +22,7 @@ func main() {
 	route.Use(gin.LoggerWithConfig(gin.LoggerConfig{SkipPaths: []string{"/health"}}))
 	route.Use(gin.Recovery())
 	route.Use(cors.Default())
+	route.NoRoute(handlers.NotFoundHandler)
 
 	// routes
 	server := route.Group("/")
@@ -29,7 +30,6 @@ func main() {
 		server.GET("/", handlers.DefaultHandler)
 		server.POST("/track", handlers.TrackHandler)
 		server.GET("/health", handlers.HealthCheckHandler)
-		server.Any("/:route", handlers.NotFoundHandler)
 	}
 
 	PORT := fmt.Sprintf(":%s", CONFIG.SERVER.PORT)

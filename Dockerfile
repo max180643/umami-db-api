@@ -1,3 +1,4 @@
+ARG PORT=8080
 # Build stage
 FROM golang:1.18.4-alpine3.16 AS builder
 WORKDIR /app
@@ -16,7 +17,7 @@ RUN apk add --no-cache tzdata
 RUN apk add --no-cache curl
 
 HEALTHCHECK --interval=30s --timeout=15s --start-period=30s \
-  CMD curl --silent --fail localhost:8080/health || exit 1
+  CMD curl --silent --fail localhost:$PORT/health || exit 1
 
-EXPOSE 8080
+EXPOSE $PORT
 CMD [ "/app/main" ]
