@@ -3,5 +3,6 @@ services:
   app:
     container_name: umami-db-api
     build: .
+    restart: always
     ports:
       - "8080:8080"
