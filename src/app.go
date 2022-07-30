@@ -18,7 +18,9 @@ func main() {
 		gin.SetMode(gin.ReleaseMode)
 	}
 
-	route := gin.Default()
+	route := gin.New()
+	route.Use(gin.LoggerWithConfig(gin.LoggerConfig{SkipPaths: []string{"/health"}}))
+	route.Use(gin.Recovery())
 	route.Use(cors.Default())
 
 	// routes

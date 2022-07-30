@@ -25,7 +25,7 @@ func CreateSession(websiteId string, hostname string, ip string, userAgent strin
 	err := conn.QueryRow(context.Background(), query).Scan(&sessionId)
 
 	if err != nil {
-		log.Panicln("[GetSessionByUuid] QueryRow failed: ", err)
+		log.Println("[GetSessionByUuid] QueryRow failed: ", err)
 	}
 
 	if sessionId == 0 {
